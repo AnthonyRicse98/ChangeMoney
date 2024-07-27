@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import Reat, { useState } from "react";
 import PropTypes from "prop-types";
 import {
   Image,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
 } from "react-native";
-import {  Card } from "react-native-paper";
-import { COLORS } from "../../../shared/utils/colors/constant.js"
+import { Button, Card } from "react-native-paper";
+import { COLORS } from "../../../shared/utils/constant";
 import WNumInput from "../NumericInput";
 
 const WProduct = ({
@@ -67,7 +68,6 @@ const WProduct = ({
 export default WProduct;
 
 WProduct.defaultProps = {
-  key : 1 ,
   titleProduct: "Rellenitas de Coco",
   subtitle: "Galleta",
   img: "https://munchpak.com/media/catalog/product/cache/04fcb38ef88b2143ed9aa346069c8a0e/g/a/galletas-coco.jpg",
@@ -76,15 +76,11 @@ WProduct.defaultProps = {
 };
 
 WProduct.propTypes = {
-  key : PropTypes.any,
   titleProduct: PropTypes.string,
   subtitle: PropTypes.string,
   img: PropTypes.string,
   trashIcon: PropTypes.string,
   price: PropTypes.number,
-
-  onRemove : PropTypes.func , 
-  onUpdateProductQuantity : PropTypes.func
 };
 
 const styles = StyleSheet.create({

@@ -7,7 +7,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Login from './src/app/login/index';
 import Home from './src/app/Home/index';
 import { Routes } from './src/shared/configuration/routes';
-import { COLORS } from './src/shared/utils/colors/constant.js'
+import { COLORS } from './src/shared/utils/constant';
 import { StatusBar, View } from 'react-native';
 import WCustomDrawer from './src/components/molecules/CustomDrawer';
 import Products from './src/app/Products';
@@ -18,6 +18,9 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 function App() {
     const navigationRef = useRef()
+    const [state, setState] = useState({ open: false });
+    const onStateChange = ({ open }) => setState({ open });
+    const { open } = state;
     return (
 
         <>

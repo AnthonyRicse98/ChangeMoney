@@ -1,13 +1,17 @@
 import { BarCodeScanner } from "expo-barcode-scanner";
+import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import {
+  Button,
   StyleSheet,
   Text,
   View,
+  Linking,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { Audio } from "expo-av";
-import { COLORS } from "../../../shared/utils/colors/constant.js"
+import { COLORS } from "../../../shared/utils/constant";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { Routes } from "../../../shared/configuration/routes";
 
@@ -54,6 +58,10 @@ const WBarScanner = () => {
     setTimeout(() => {
       navigateHook.navigate(Routes.Products, { type: newType, data });
     }, 400);
+  };
+
+  const startScan = () => {
+    setScanned(false);
   };
 
   const renderCamera = () => {
